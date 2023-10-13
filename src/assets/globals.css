@@ -9,3 +9,12 @@
 .pl-5{
   padding-left: 100px;
 }
+.main-bg{
+  background-color: rgb(210, 234, 255);
+}
+.btn-secondary-subtle{
+  background-color: rgb(210, 234, 255);
+}
+.btn-secondary-subtle:hover{
+  background-color: rgb(120, 192, 255);
+}

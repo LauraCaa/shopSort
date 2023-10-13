@@ -21,10 +21,10 @@ export default function EditButton(props){
         <div>
           {isEditing ? (
             <>
-              <button onClick={saveChanges}>Guardar</button>
+              <button onClick={saveChanges}>Save</button>
             </>
           ) : (
-            <button onClick={handleEditClick}>Editar</button>
+            <button className='btn btn-lg btn-secondary-subtle fw-bolder' onClick={handleEditClick}>Edit</button>
           )}
         </div>
       );
