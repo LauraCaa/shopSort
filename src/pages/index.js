@@ -48,7 +48,7 @@ export default function Home() {
       <div className="main-bg min-vh-100">
         <div className="overflow-hidden">
           <div className="row py-4">
-            <h1 className="ms-5 pb-2 pt-0 fw-normal">Products</h1>
+            <h1 className="ms-3 pb-2 pt-0 fw-normal">Products</h1>
             <div className="col">
               <NewButtton />
             </div>
