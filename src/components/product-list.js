@@ -13,12 +13,18 @@ export default function ProductList({ products, search }) {
 
   const filteredProducts = filterProductsBySearch(products, search);
 
-  const handleEditClick = (product) => {
+  function handleEditClick(product) {
     setIsEditing(!isEditing);
     setEditedProduct(product);
   };
 
-  const saveChanges = () => {
+  function handleFieldChange(event, field) {
+    const updatedProduct = { ...editedProduct };
+    updatedProduct[field] = event.target.value;
+    setEditedProduct(updatedProduct);
+  }
+
+  function saveChanges() {
     // Lógica para guardar los cambios
     setIsEditing(false);
     setEditedProduct(null);
@@ -58,6 +64,7 @@ export default function ProductList({ products, search }) {
                   type="text"
                   value={editedProduct.name}
                   className='col-12'
+                  onChange={(event) => handleFieldChange(event, "name")}
                 />
               ) : (
                 <>
@@ -72,6 +79,7 @@ export default function ProductList({ products, search }) {
                   type="number"
                   value={editedProduct.price}
                   className='col-6 mt-2'
+                  onChange={(event) => handleFieldChange(event, "price")}
                 />
                 ) : (
                   <p className='pt-2'>${product.price}</p>
@@ -83,6 +91,7 @@ export default function ProductList({ products, search }) {
                   type="number"
                   value={editedProduct.stock}
                   className='col-12 mt-2'
+                  onChange={(event) => handleFieldChange(event, "stock")}
                 />
               ) : (
                 <p className='mt-2'>{product.stock}</p>
@@ -106,62 +115,3 @@ export default function ProductList({ products, search }) {
 }
 
 
-
-{/* <table className="table table-bordered table-striped table-hover custom-table">
-            <thead className="bg-primary text-white">
-              <tr>
-                <th className='text-center'>Product</th>
-                <th >Details</th>
-                <th className='text-center'>Price</th>
-                <th className='text-center'>Stock</th>
-                <th className='text-center'>Sku</th>
-                <th className='text-center'>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredProducts.map((product) => (
-                <tr key={product.id}>
-                  <td className='text-center align-middle'>
-                    <img src={product.image} className="img-fluid product-image" alt={product.name} />
-                  </td>
-                  <td>
-                    {isEditing && editedProduct && editedProduct.id === product.id ? (
-                      <input
-                        type="text"
-                        value={editedProduct.name}
-                      />
-                    ) : (
-                      <>
-                        <h4>{product.name}</h4>
-                        <p>{product.description}</p>
-                      </>
-                    )}
-                  </td>
-                  <td className='text-center align-middle'>${isEditing && editedProduct && editedProduct.id === product.id ? (
-                    <input
-                      type="number"
-                      value={editedProduct.price}
-                    />
-                  ) : (
-                    product.price
-                  )}</td>
-                  <td className='text-center align-middle'>{isEditing && editedProduct && editedProduct.id === product.id ? (
-                    <input
-                      type="number"
-                      value={editedProduct.stock}
-                    />
-                  ) : (
-                    product.stock
-                  )}</td>
-                  <td className='text-center align-middle'></td>
-                  <td className='text-center align-middle'>
-                    {isEditing && editedProduct && editedProduct.id === product.id ? (
-                      <button className="btn btn-success btn-lg fw-bolder" onClick={saveChanges}>Save</button>
-                    ) : (
-                      <EditButton product={product} onEdit={handleEditClick}/>
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table> */}
