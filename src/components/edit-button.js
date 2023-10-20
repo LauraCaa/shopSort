@@ -24,7 +24,7 @@ export default function EditButton(props){
               <button onClick={saveChanges}>Save</button>
             </>
           ) : (
-            <button className='btn btn-lg btn-secondary-subtle fw-bolder' onClick={handleEditClick}>Edit</button>
+            <button className='btn btn-lg btn-secondary-subtle fw-bolder main-font px-4 py-3' onClick={handleEditClick}>Edit</button>
           )}
         </div>
       );

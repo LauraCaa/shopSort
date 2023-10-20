@@ -32,33 +32,33 @@ export default function ProductList({ products, search }) {
 
   return (
     <div className="container">
-      <div className="row mx-2 pl-2 py-3"> 
-        <div className='col-2'>
-          <h3>Product</h3>
+      <div className="row mx-1 pl-2 py-3"> 
+        <div className='col-2 fw-bolder text-secondary'>
+          <p>PRODUCTS</p>
         </div>
-        <div className='col-3 ps-0'>
-          <h3>Detail</h3>
+        <div className='col-3 ps-0 fw-bolder text-secondary'>
+          <p>DETAIL</p>
         </div>
-        <div className='col-2 text-center pe-5'>
-          <h3>Price</h3>
+        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
+          <p>PRICE</p>
         </div>
-        <div className='col-1 text-center pe-5'>
-          <h3>Stuck</h3>
+        <div className='col-1 text-center pe-5 fw-bolder text-secondary'>
+          <p>STOCK</p>
         </div>
-        <div className='col-2 text-center pe-5'>
-          <h3>Sku</h3>
+        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
+          <p>SKU</p>
         </div>
-        <div className='col-2 text-center pe-5'>
-          <h3>Actions</h3>
+        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
+          <p>ACTIONS</p>
         </div>
       </div>
       <div className="row mx-2 pl-2">
         {filteredProducts.map((product) => (
           <div className="row bg-white mb-3 rounded-4" key={product.id}>
             <div className='col-1 d-flex flex-column align-items-center justify-content-center'>
-              <img src={product.image} className="img-fluid product-image" alt={product.name} />
+              <img src={product.image} className="img-fluid product-image" alt={product.name}/>
             </div>
-            <div className='col-4 pt-3 my-3'>
+            <div className='col-4 pt-4 my-2'>
               {isEditing && editedProduct && editedProduct.id === product.id ? (
                 <input
                   type="text"
@@ -68,8 +68,8 @@ export default function ProductList({ products, search }) {
                 />
               ) : (
                 <>
-                  <h4>{product.name}</h4>
-                  <p>{product.description}</p>
+                  <p className='text-16 fw-bolder'>{product.name}</p>
+                  <p className='text-secondary'>{product.description}</p>
                 </>
               )}
             </div>
@@ -82,7 +82,7 @@ export default function ProductList({ products, search }) {
                   onChange={(event) => handleFieldChange(event, "price")}
                 />
                 ) : (
-                  <p className='pt-2'>${product.price}</p>
+                  <p className='pt-4'>${product.price}</p>
               )}
             </div>
             <div className='col-1 d-flex flex-column align-items-center justify-content-center'>
@@ -94,15 +94,15 @@ export default function ProductList({ products, search }) {
                   onChange={(event) => handleFieldChange(event, "stock")}
                 />
               ) : (
-                <p className='mt-2'>{product.stock}</p>
+                <p className='mt-2 pt-4'>{product.stock}</p>
               )}
             </div>
-            <div className='col-2 d-flex flex-column align-items-center justify-content-center'>
-              <h6>{product.sku}</h6>
+            <div className='col-2 d-flex flex-column align-items-center justify-content-center main-font pt-4'>
+              <p>{product.sku}</p>
             </div>
             <div className='col-2 d-flex flex-column align-items-center justify-content-center'>
               {isEditing && editedProduct && editedProduct.id === product.id ? (
-                <button className="btn btn-success btn-lg fw-bolder" onClick={saveChanges}>Save</button>
+                <button className="btn btn-success btn-lg main-font px-4 py-3 fw-bolder" onClick={saveChanges}>Save</button>
               ) : (
                 <EditButton product={product} onEdit={handleEditClick}/>
               )}

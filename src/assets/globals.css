@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.main-font{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+.text-16{
+  font-size: 16px;
+}
 .start-10{
   position: absolute;
   left: 10px;
@@ -13,11 +22,11 @@
   padding-left: 20px;
 }
 .main-bg{
-  background-color: rgb(210, 234, 255);
+  background-color: rgb(235, 237, 238);
 }
 .btn-secondary-subtle{
-  background-color: rgb(210, 234, 255);
+  background-color: rgb(235, 237, 238);
 }
 .btn-secondary-subtle:hover{
-  background-color: rgb(120, 192, 255);
+  background-color: rgb(37, 19, 235);
 }

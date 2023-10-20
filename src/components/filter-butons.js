@@ -3,7 +3,7 @@ export default function FilterButtons({ onFilterChange }){
     return(
         <div className="me-5">
             <select
-                className="form-select form-select-lg mt-2"
+                className="form-select form-select-lg mt-2 py-3 main-font rounded-4"
                 name="filter"
                 aria-label="Large select example"
                 onChange={(event) => onFilterChange(event.target.value)}

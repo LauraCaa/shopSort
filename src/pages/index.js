@@ -47,10 +47,10 @@ export default function Home() {
   };
 
   return (
-      <div className="main-bg min-vh-100">
+      <div className="main-bg main-font min-vh-100">
         <div className="overflow-hidden">
           <div className="row py-4">
-            <h1 className="ms-3 pb-2 pt-0 fw-normal">Products</h1>
+            <h3 className="ms-3 pb-2 pt-0 fw-normal">Products</h3>
             <div className="col">
               <NewButtton />
             </div>
