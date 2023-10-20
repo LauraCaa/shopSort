@@ -31,6 +31,7 @@ export default function Home() {
       const inactiveProducts = products.filter((product) => !product.isActive);
       setFilteredProducts(inactiveProducts);
     }
+    
   };
   useEffect(() => {
     fetch("products.json")

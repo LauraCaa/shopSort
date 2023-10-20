@@ -1,5 +1,5 @@
 import React from 'react';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 import SearchBar from '../src/components/search-bar';
 import { render, screen, fireEvent } from '@testing-library/react';
 
@@ -21,9 +21,9 @@ describe('Testing searchBar', () => {
             );
             const searchInput = getByPlaceholderText('Search');
         
-            fireEvent.change(searchInput, { target: { value: 'test query' } });
+            fireEvent.change(searchInput, { target: { value: 'product 1' } });
         
-            expect(mockHandleSearchChange).toHaveBeenCalledWith('test query');
+            expect(mockHandleSearchChange).toHaveBeenCalledWith('product 1');
         });
     });
  });

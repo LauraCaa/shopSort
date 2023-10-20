@@ -1,3 +1,4 @@
+import React from 'react';
 export default function FilterButtons({ onFilterChange }){
     return(
         <div className="me-5">
