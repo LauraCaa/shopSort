@@ -30,3 +30,6 @@
 .btn-secondary-subtle:hover{
   background-color: rgb(37, 19, 235);
 }
+.no-stock{
+  background-color: #f6f0f0; /* Cambia este color al que desees para indicar que no hay stock */
+}

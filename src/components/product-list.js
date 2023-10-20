@@ -54,7 +54,7 @@ export default function ProductList({ products, search }) {
       </div>
       <div className="row mx-2 pl-2">
         {filteredProducts.map((product) => (
-          <div className="row bg-white mb-3 rounded-4" key={product.id}>
+          <div className={`row mb-3 rounded-4 ${product.stock > 0 ? 'bg-white' : 'no-stock'}`} key={product.id}>
             <div className='col-1 d-flex flex-column align-items-center justify-content-center'>
               <img src={product.image} className="img-fluid product-image" alt={product.name}/>
             </div>
