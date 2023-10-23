@@ -65,27 +65,9 @@ export default function Home() {
           <div className="col-6 col-md-2 pr-3">
             <RangePrice />
           </div>
-        </div>
-        <div className="row mx-1 pl-2 py-3">
-          <div className="col-2 fw-bolder text-secondary">
-            <p>PRODUCTS</p>
+          <div>
+            <ProductList products={filteredProducts} search={search} />
           </div>
-          <div className="col-3 ps-0 fw-bolder text-secondary">
-            <p>DETAIL</p>
-          </div>
-          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
-            <p>PRICE</p>
-          </div>
-          <div className="col-1 text-center pe-5 fw-bolder text-secondary">
-            <p>STOCK</p>
-          </div>
-          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
-            <p>SKU</p>
-          </div>
-          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
-            <p>ACTIONS</p>
-          </div>
-          <ProductList products={filteredProducts} search={search} />
         </div>
       </div>
   </div>
