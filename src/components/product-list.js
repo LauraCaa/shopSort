@@ -31,31 +31,14 @@ export default function ProductList({ products, search }) {
   };
 
   return (
-    <div className="container">
-      <div className="row mx-1 pl-2 py-3"> 
-        <div className='col-2 fw-bolder text-secondary'>
-          <p>PRODUCTS</p>
-        </div>
-        <div className='col-3 ps-0 fw-bolder text-secondary'>
-          <p>DETAIL</p>
-        </div>
-        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
-          <p>PRICE</p>
-        </div>
-        <div className='col-1 text-center pe-5 fw-bolder text-secondary'>
-          <p>STOCK</p>
-        </div>
-        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
-          <p>SKU</p>
-        </div>
-        <div className='col-2 text-center pe-5 fw-bolder text-secondary'>
-          <p>ACTIONS</p>
-        </div>
-      </div>
+    <div className="container overflow-auto">
       <div className="row mx-2 pl-2">
         {filteredProducts.map((product) => (
           <div className={`row mb-3 rounded-4 ${product.stock > 0 ? 'bg-white' : 'no-stock'}`} key={product.id}>
             <div className='col-1 d-flex flex-column align-items-center justify-content-center'>
+              <div className='align-self-start'>
+                {product.isActive ? <span className="green-dot"></span> : <span className="red-dot"></span>}
+              </div>
               <img src={product.image} className="img-fluid product-image" alt={product.name}/>
             </div>
             <div className='col-4 pt-4 my-2'>

@@ -47,29 +47,48 @@ export default function Home() {
   };
 
   return (
-      <div className="main-bg main-font min-vh-100">
-        <div className="overflow-hidden">
-          <div className="row py-4">
-            <h3 className="ms-3 pb-2 pt-0 fw-normal">Products</h3>
-            <div className="col">
-              <NewButtton />
-            </div>
-            <div className="col-5">
-              <SearchBar onSearchChange={handleSearchChange} />
-            </div>
-            <div className="col d-flex">
-              <div className="col-5">
-                <FilterButtons onFilterChange={handleFilterChange} />
-              </div>
-              <div className="col-5">
-                <RangePrice />
-              </div>
-            </div>
+    <div className="main-bg main-font min-vh-100">
+      <div className="overflow-hidden">
+        <div className="py-4">
+          <h3 className="ms-3 fw-normal">Products</h3>
+        </div>
+        <div className="row">
+          <div className="col-5 col-md-3">
+            <NewButtton />
           </div>
-          <div className="row">
-            <ProductList products={filteredProducts} search={search} />
+          <div className="col-12 pl-2 pr-2 col-md-5">
+            <SearchBar onSearchChange={handleSearchChange} />
+          </div>
+          <div className="col-6 col-md-2 pl-3">
+            <FilterButtons onFilterChange={handleFilterChange} />
+          </div>
+          <div className="col-6 col-md-2 pr-3">
+            <RangePrice />
           </div>
         </div>
+        <div className="row mx-1 pl-2 py-3">
+          <div className="col-2 fw-bolder text-secondary">
+            <p>PRODUCTS</p>
+          </div>
+          <div className="col-3 ps-0 fw-bolder text-secondary">
+            <p>DETAIL</p>
+          </div>
+          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
+            <p>PRICE</p>
+          </div>
+          <div className="col-1 text-center pe-5 fw-bolder text-secondary">
+            <p>STOCK</p>
+          </div>
+          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
+            <p>SKU</p>
+          </div>
+          <div className="col-2 text-center pe-5 fw-bolder text-secondary">
+            <p>ACTIONS</p>
+          </div>
+          <ProductList products={filteredProducts} search={search} />
+        </div>
       </div>
+  </div>
+  
   )
 }
