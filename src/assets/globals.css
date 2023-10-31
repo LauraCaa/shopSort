@@ -24,6 +24,12 @@
 .pl-5{
   padding-left: 100px;
 }
+.ml-3{
+  padding-left: 30px;
+}
+.mr-4{
+  padding-right: 40px;
+}
 .pl-3{
   padding-left: 45px;
 }
@@ -64,5 +70,12 @@
   margin-right: 5px;
 }
 .separe {
+  border-top-left-radius: 400px 200px;
   border-bottom: 10px solid rgb(235, 237, 238); /* Línea divisoria en la parte inferior de cada fila */
+}
+.border-round-right {
+  border-radius: 0px 20px 25px 0px;
+}
+.border-round-left {
+  border-radius: 20px 0px 0px 25px;
 }

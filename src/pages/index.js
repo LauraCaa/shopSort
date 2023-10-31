@@ -50,19 +50,19 @@ export default function Home() {
     <div className="main-bg main-font min-vh-100">
       <div className="overflow-hidden">
         <div className="py-4">
-          <h3 className="ms-3 fw-normal">Products</h3>
+          <h3 className="ml-3 fw-normal">Products</h3>
         </div>
         <div className="row">
           <div className="col-5 col-md-3">
             <NewButtton />
           </div>
-          <div className="col-12 pl-2 pr-2 col-md-5">
+          <div className="col-12 pl-3 col-md-5 mr-4">
             <SearchBar onSearchChange={handleSearchChange} />
           </div>
           <div className="col-6 col-md-2 pl-3">
             <FilterButtons onFilterChange={handleFilterChange} />
           </div>
-          <div className="col-6 col-md-2 pr-3">
+          <div className="col-6 col-md-2 mr-4">
             <RangePrice />
           </div>
           <div>
